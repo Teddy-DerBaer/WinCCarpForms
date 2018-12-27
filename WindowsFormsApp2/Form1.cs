@@ -60,8 +60,7 @@ namespace WindowsFormsApp2
             }
             else
             {
-                //this->checkBox1->Enabled = false;
-
+                
                 comboBox1.Enabled = true;
                 listBox1.Enabled = true;
 
@@ -84,8 +83,7 @@ namespace WindowsFormsApp2
 
                 if (checkBox2.Checked)
                 {
-                    checkBox1.Enabled = true;
-                    //this->checkBox1->Checked = false;
+                    checkBox1.Enabled = true;                   
                 }
                 else
                 {
@@ -99,6 +97,11 @@ namespace WindowsFormsApp2
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
