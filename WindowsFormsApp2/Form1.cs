@@ -29,14 +29,20 @@ namespace WindowsFormsApp2
             if (checkBox1.Enabled)
             {
                 comboBox1.Items.Clear();
+                comboBox1.ResetText();
+
                 string text = listBox1.SelectedItem.ToString();
                 string[] TArray;
                 TArray = text.Split(';');
+                comboBox1.BeginUpdate();
                 for (int i = 0; i < TArray.Length; ++i)
                 {
                     comboBox1.Items.Add(TArray[i]);
                 }
+                comboBox1.EndUpdate();               
+                
 
+                comboBox1.Refresh();
                 comboBox1.Enabled = true;
                 checkBox1.Enabled = false;
                 checkBox1.Checked = true;
@@ -96,13 +102,14 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void ComboBox_Click(object sender, EventArgs e)
         {
 
-        }
+            string text = comboBox1.SelectedItem.ToString();
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
+            System.Windows.Forms.Clipboard.SetDataObject(text, true);
+
+
 
         }
     }

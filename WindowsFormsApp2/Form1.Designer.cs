@@ -64,9 +64,10 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(40, 144);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(213, 24);
+            this.comboBox1.Size = new System.Drawing.Size(232, 24);
             this.comboBox1.Sorted = true;
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.TextChanged += new System.EventHandler(this.ComboBox_Click);
             // 
             // checkBox1
             // 
@@ -114,7 +115,6 @@
             this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Sicherheits Sperre";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -154,7 +154,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
