@@ -40,6 +40,7 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.Open_Btn = new System.Windows.Forms.Button();
             this.Save_Btn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBox1
@@ -55,7 +56,7 @@
             "fasdfasdf;asdgasdhsdfjsdf;asdgasdghasdg;ddd",
             "gfgfg;fdfdddddd;sdsfs"});
             this.listBox1.Location = new System.Drawing.Point(727, 91);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(620, 384);
             this.listBox1.Sorted = true;
@@ -68,7 +69,7 @@
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(53, 112);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(308, 28);
             this.comboBox1.Sorted = true;
@@ -82,7 +83,7 @@
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Enabled = false;
             this.checkBox1.Location = new System.Drawing.Point(469, 145);
-            this.checkBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(91, 21);
             this.checkBox1.TabIndex = 2;
@@ -94,7 +95,7 @@
             // 
             this.checkBox2.AutoSize = true;
             this.checkBox2.Location = new System.Drawing.Point(469, 242);
-            this.checkBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox2.MaximumSize = new System.Drawing.Size(132, 122);
             this.checkBox2.Name = "checkBox2";
             this.checkBox2.Size = new System.Drawing.Size(100, 21);
@@ -142,7 +143,20 @@
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "UserDaT  files (*.UDTß)|*.UDTß";
+            this.openFileDialog1.ReadOnlyChecked = true;
+            this.openFileDialog1.RestoreDirectory = true;
+            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.CheckFileExists = true;
+            this.saveFileDialog1.CheckPathExists = false;
+            this.saveFileDialog1.CreatePrompt = true;
+            this.saveFileDialog1.FileName = "UserDat.UDTß";
+            this.saveFileDialog1.Filter = "UserDaT  files (*.UDTß)|*.UDTß";
+            this.saveFileDialog1.RestoreDirectory = true;
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
             // Open_Btn
             // 
@@ -152,6 +166,7 @@
             this.Open_Btn.TabIndex = 9;
             this.Open_Btn.Text = "Open";
             this.Open_Btn.UseVisualStyleBackColor = true;
+            this.Open_Btn.Click += new System.EventHandler(this.Open_Btn_Click);
             // 
             // Save_Btn
             // 
@@ -161,6 +176,16 @@
             this.Save_Btn.TabIndex = 10;
             this.Save_Btn.Text = "Save";
             this.Save_Btn.UseVisualStyleBackColor = true;
+            this.Save_Btn.Click += new System.EventHandler(this.Save_Btn_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(58, 386);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 17);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "label5";
             // 
             // Form1
             // 
@@ -168,6 +193,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1360, 625);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.Save_Btn);
             this.Controls.Add(this.Open_Btn);
             this.Controls.Add(this.label4);
@@ -178,7 +204,7 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.listBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -202,6 +228,7 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button Open_Btn;
         private System.Windows.Forms.Button Save_Btn;
+        private System.Windows.Forms.Label label5;
     }
 }
 

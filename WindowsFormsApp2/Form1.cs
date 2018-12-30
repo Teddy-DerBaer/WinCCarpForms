@@ -112,5 +112,49 @@ namespace WindowsFormsApp2
 
 
         }
+
+        private void Open_Btn_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog1.ShowDialog() == DialogResult.OK )
+            {
+                label5.Text = openFileDialog1.FileName;
+            }
+            else
+            {
+                label5.Text = openFileDialog1.FileName;
+            }
+            
+
+
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+           
+        }
+
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            
+        }
+
+        private void Save_Btn_Click(object sender, EventArgs e)
+        {
+
+            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                System.IO.File.WriteAllText(saveFileDialog1.FileName, ??=);
+            }
+            else
+            {
+
+
+
+            }
+
+            
+
+           
+        }
     }
 }
