@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -41,6 +42,7 @@
             this.Open_Btn = new System.Windows.Forms.Button();
             this.Save_Btn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.ListBox_toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // listBox1
@@ -183,9 +185,15 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(58, 386);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 17);
+            this.label5.Size = new System.Drawing.Size(175, 17);
             this.label5.TabIndex = 11;
-            this.label5.Text = "label5";
+            this.label5.Text = "Noch keine Datei geladen.";
+            // 
+            // ListBox_toolTip
+            // 
+            this.ListBox_toolTip.AutomaticDelay = 900;
+            this.ListBox_toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning;
+            this.ListBox_toolTip.ToolTipTitle = "Die Namen sind schon vorhanden!!";
             // 
             // Form1
             // 
@@ -229,6 +237,7 @@
         private System.Windows.Forms.Button Open_Btn;
         private System.Windows.Forms.Button Save_Btn;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ToolTip ListBox_toolTip;
     }
 }
 

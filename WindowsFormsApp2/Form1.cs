@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+
 
 namespace WindowsFormsApp2
 {
@@ -16,6 +18,8 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
         }
+
+        public const int NoMatches = -1;
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
@@ -115,17 +119,47 @@ namespace WindowsFormsApp2
 
         private void Open_Btn_Click(object sender, EventArgs e)
         {
-            if(openFileDialog1.ShowDialog() == DialogResult.OK )
+
+            string filePath = string.Empty;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK )
             {
-                label5.Text = openFileDialog1.FileName;
+                filePath = openFileDialog1.FileName;
+                label5.Text = "Es wurde folgende Datei geladen :\n\r\n\r" + filePath; 
+                filePath = openFileDialog1.FileName;
+                try
+                {
+                    using (StreamReader sr = new StreamReader(filePath))
+                    {
+                        string line = "";
+                        string lineList = ""; 
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            int index =listBox1.FindStringExact(line);
+                            if (index == ListBox.NoMatches)
+                            {
+                                listBox1.Items.Add(line);
+                            }
+                            else
+                            {
+                                lineList = lineList + line + "\r\n";
+                                ListBox_toolTip.Show(lineList, listBox1 ,55 ,299,11000 );
+                               // MessageBox.Show("Name -> " + line + " <-ist schon vorhanden !!", "Ist schon Vorhanden!!" , MessageBoxButtons.OK);
+                            }
+                        }
+                    }
+                }
+                catch (Exception es)
+                {
+
+                    //Was schief gegangen ist.                                       
+                    MessageBox.Show("Datei konnte nicht gelesen werden" + "\r\n\r\n" + es.Message, "Dateiinhalt unter Pfad:\r\n\r\n " + filePath , MessageBoxButtons.OK);
+                }
             }
             else
             {
-                label5.Text = openFileDialog1.FileName;
+                label5.Text = "Es wurde keine Datei geladen \r\n\r\nDurch Abbruch vom Benutzer !!";
             }
-            
-
-
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -143,7 +177,7 @@ namespace WindowsFormsApp2
 
             if(saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                System.IO.File.WriteAllText(saveFileDialog1.FileName, ??=);
+                //System.IO.File.WriteAllText(saveFileDialog1.FileName, ??=);
             }
             else
             {
