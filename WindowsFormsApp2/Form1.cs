@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 
 namespace WindowsFormsApp2
@@ -43,8 +36,8 @@ namespace WindowsFormsApp2
                 {
                     comboBox1.Items.Add(TArray[i]);
                 }
-                comboBox1.EndUpdate();               
-                
+                comboBox1.EndUpdate();
+
 
                 comboBox1.Refresh();
                 comboBox1.Enabled = true;
@@ -56,7 +49,7 @@ namespace WindowsFormsApp2
 
 
 
-            
+
         }
 
         private void checkBox1_Click(object sender, EventArgs e)
@@ -70,7 +63,7 @@ namespace WindowsFormsApp2
             }
             else
             {
-                
+
                 comboBox1.Enabled = true;
                 listBox1.Enabled = true;
 
@@ -93,7 +86,7 @@ namespace WindowsFormsApp2
 
                 if (checkBox2.Checked)
                 {
-                    checkBox1.Enabled = true;                   
+                    checkBox1.Enabled = true;
                 }
                 else
                 {
@@ -122,20 +115,20 @@ namespace WindowsFormsApp2
 
             string filePath = string.Empty;
 
-            if (openFileDialog1.ShowDialog() == DialogResult.OK )
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 filePath = openFileDialog1.FileName;
-                label5.Text = "Es wurde folgende Datei geladen :\n\r\n\r" + filePath; 
-                filePath = openFileDialog1.FileName;
+                label5.Text = "Es wurde folgende Datei geladen :\n\r\n\r" + filePath;
                 try
                 {
                     using (StreamReader sr = new StreamReader(filePath))
                     {
+                        listBox1.BeginUpdate();
                         string line = "";
-                        string lineList = ""; 
+                        string lineList = "";
                         while ((line = sr.ReadLine()) != null)
                         {
-                            int index =listBox1.FindStringExact(line);
+                            int index = listBox1.FindStringExact(line);
                             if (index == ListBox.NoMatches)
                             {
                                 listBox1.Items.Add(line);
@@ -143,17 +136,18 @@ namespace WindowsFormsApp2
                             else
                             {
                                 lineList = lineList + line + "\r\n";
-                                ListBox_toolTip.Show(lineList, listBox1 ,55 ,299,11000 );
-                               // MessageBox.Show("Name -> " + line + " <-ist schon vorhanden !!", "Ist schon Vorhanden!!" , MessageBoxButtons.OK);
+                                ListBox_toolTip.Show(lineList, listBox1, 55, 299, 11000);
+                                // MessageBox.Show("Name -> " + line + " <-ist schon vorhanden !!", "Ist schon Vorhanden!!" , MessageBoxButtons.OK);
                             }
                         }
+                        listBox1.EndUpdate();
                     }
                 }
                 catch (Exception es)
                 {
 
                     //Was schief gegangen ist.                                       
-                    MessageBox.Show("Datei konnte nicht gelesen werden" + "\r\n\r\n" + es.Message, "Dateiinhalt unter Pfad:\r\n\r\n " + filePath , MessageBoxButtons.OK);
+                    MessageBox.Show("Datei konnte nicht gelesen werden" + "\r\n\r\n" + es.Message, "Dateiinhalt unter Pfad:\r\n\r\n " + filePath, MessageBoxButtons.OK);
                 }
             }
             else
@@ -162,33 +156,48 @@ namespace WindowsFormsApp2
             }
         }
 
-        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-           
-        }
-
-        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
-        {
-            
-        }
-
         private void Save_Btn_Click(object sender, EventArgs e)
         {
 
-            if(saveFileDialog1.ShowDialog() == DialogResult.OK)
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                //System.IO.File.WriteAllText(saveFileDialog1.FileName, ??=);
+
+                try
+                {
+
+                    using (StreamWriter sw = new StreamWriter(saveFileDialog1.FileName))
+                    {
+                        //listBox1.Enabled = true;
+                        if ( listBox1.Items.Count > 0)
+                        {
+                            listBox1.BeginUpdate();
+                            foreach (string item in listBox1.Items)
+                            {
+                                sw.WriteLine(item);
+                            }
+                            label5.Text = "Dateien gespeichert unter : \r\n\r\n" + saveFileDialog1.FileName;
+                            listBox1.EndUpdate();
+                            listBox1.Items.Clear();
+                        }
+                        else
+                        {
+                            label5.Text = "Daten von ListBox nicht gespeichert : \r\n\r\nDie ListBox war LEER !!";
+                        }
+
+                    }
+                }
+                catch (Exception es)
+                {
+
+                    //Was schief gegangen ist.                                       
+                    MessageBox.Show("Datei konnte nicht geschrieben werden" + "\r\n\r\n" + es.Message, "Dateiinhalt unter Pfad:\r\n\r\n " + saveFileDialog1.FileName, MessageBoxButtons.OK);
+                }
+
             }
             else
             {
-
-
-
+                label5.Text = "Es wurde keine Datei gespeichert \r\n\r\nDurch Abbruch vom Benutzer !!";
             }
-
-            
-
-           
         }
     }
 }

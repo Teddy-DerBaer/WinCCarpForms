@@ -43,6 +43,9 @@
             this.Save_Btn = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.ListBox_toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.txtBox1 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -148,20 +151,18 @@
             this.openFileDialog1.Filter = "UserDaT  files (*.UDTß)|*.UDTß";
             this.openFileDialog1.ReadOnlyChecked = true;
             this.openFileDialog1.RestoreDirectory = true;
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
             // saveFileDialog1
             // 
             this.saveFileDialog1.CheckFileExists = true;
-            this.saveFileDialog1.CheckPathExists = false;
             this.saveFileDialog1.CreatePrompt = true;
             this.saveFileDialog1.FileName = "UserDat.UDTß";
             this.saveFileDialog1.Filter = "UserDaT  files (*.UDTß)|*.UDTß";
             this.saveFileDialog1.RestoreDirectory = true;
-            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
             // Open_Btn
             // 
+            this.Open_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Open_Btn.Location = new System.Drawing.Point(66, 537);
             this.Open_Btn.Name = "Open_Btn";
             this.Open_Btn.Size = new System.Drawing.Size(104, 39);
@@ -172,6 +173,7 @@
             // 
             // Save_Btn
             // 
+            this.Save_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Save_Btn.Location = new System.Drawing.Point(201, 537);
             this.Save_Btn.Name = "Save_Btn";
             this.Save_Btn.Size = new System.Drawing.Size(104, 41);
@@ -195,12 +197,42 @@
             this.ListBox_toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning;
             this.ListBox_toolTip.ToolTipTitle = "Die Namen sind schon vorhanden!!";
             // 
+            // txtBox1
+            // 
+            this.txtBox1.Location = new System.Drawing.Point(555, 554);
+            this.txtBox1.Name = "txtBox1";
+            this.txtBox1.Size = new System.Drawing.Size(800, 22);
+            this.txtBox1.TabIndex = 12;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(551, 502);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(237, 40);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Neue UserListe hinzufügen\r\nUser1;User2; usw.";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(790, 502);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 30);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "User hinzufügen";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1360, 625);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Save_Btn);
             this.Controls.Add(this.Open_Btn);
@@ -238,6 +270,9 @@
         private System.Windows.Forms.Button Save_Btn;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolTip ListBox_toolTip;
+        private System.Windows.Forms.TextBox txtBox1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button1;
     }
 }
 
