@@ -46,6 +46,7 @@
             this.txtBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.UserHinzufuge_Btn = new System.Windows.Forms.Button();
+            this.Userlosche_BTN = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -198,7 +199,7 @@
             // 
             // txtBox1
             // 
-            this.txtBox1.Location = new System.Drawing.Point(555, 554);
+            this.txtBox1.Location = new System.Drawing.Point(338, 554);
             this.txtBox1.Name = "txtBox1";
             this.txtBox1.Size = new System.Drawing.Size(800, 22);
             this.txtBox1.TabIndex = 12;
@@ -207,7 +208,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(551, 502);
+            this.label6.Location = new System.Drawing.Point(334, 502);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(237, 40);
             this.label6.TabIndex = 13;
@@ -216,7 +217,7 @@
             // UserHinzufuge_Btn
             // 
             this.UserHinzufuge_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserHinzufuge_Btn.Location = new System.Drawing.Point(845, 502);
+            this.UserHinzufuge_Btn.Location = new System.Drawing.Point(619, 502);
             this.UserHinzufuge_Btn.Name = "UserHinzufuge_Btn";
             this.UserHinzufuge_Btn.Size = new System.Drawing.Size(148, 30);
             this.UserHinzufuge_Btn.TabIndex = 14;
@@ -224,12 +225,24 @@
             this.UserHinzufuge_Btn.UseVisualStyleBackColor = true;
             this.UserHinzufuge_Btn.Click += new System.EventHandler(this.UserHinzufuge_Btn_Click);
             // 
+            // Userlosche_BTN
+            // 
+            this.Userlosche_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Userlosche_BTN.Location = new System.Drawing.Point(783, 502);
+            this.Userlosche_BTN.Name = "Userlosche_BTN";
+            this.Userlosche_BTN.Size = new System.Drawing.Size(148, 30);
+            this.Userlosche_BTN.TabIndex = 15;
+            this.Userlosche_BTN.Text = "User Löschen";
+            this.Userlosche_BTN.UseVisualStyleBackColor = true;
+            this.Userlosche_BTN.Click += new System.EventHandler(this.Userlosche_BTN_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1360, 625);
+            this.Controls.Add(this.Userlosche_BTN);
             this.Controls.Add(this.UserHinzufuge_Btn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtBox1);
@@ -273,6 +286,7 @@
         private System.Windows.Forms.TextBox txtBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button UserHinzufuge_Btn;
+        private System.Windows.Forms.Button Userlosche_BTN;
     }
 }
 

@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp2
 {
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -13,6 +14,7 @@ namespace WindowsFormsApp2
         }
 
         public const int NoMatches = -1;
+
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
@@ -25,31 +27,33 @@ namespace WindowsFormsApp2
 
             if (checkBox1.Enabled)
             {
-                comboBox1.Items.Clear();
-                comboBox1.ResetText();
-
-                string text = listBox1.SelectedItem.ToString();
-                string[] TArray;
-                TArray = text.Split(';');
-                comboBox1.BeginUpdate();
-                for (int i = 0; i < TArray.Length; ++i)
+                if (listBox1.SelectedIndex > NoMatches)
                 {
-                    comboBox1.Items.Add(TArray[i]);
+                    comboBox1.Items.Clear();
+                    comboBox1.ResetText();
+                    string text = listBox1.SelectedItem.ToString();
+                    string[] TArray;
+                    TArray = text.Split(';');
+                    comboBox1.BeginUpdate();
+                    for (int i = 0; i < TArray.Length; ++i)
+                    {
+                        comboBox1.Items.Add(TArray[i]);
+                    }
+                    comboBox1.EndUpdate();
+                    comboBox1.Refresh();
+                    comboBox1.Enabled = true;
+                    checkBox1.Enabled = false;
+                    checkBox1.Checked = true;
+                    checkBox2.Checked = false;
+                    listBox1.Enabled = false;
                 }
-                comboBox1.EndUpdate();
+                else
+                {
+                    ListBox_toolTip.ToolTipTitle = "Fehler !!";
+                    ListBox_toolTip.Show("Nicht's markiert gewesen !!", listBox1, 55, 299, 11000);
 
-
-                comboBox1.Refresh();
-                comboBox1.Enabled = true;
-                checkBox1.Enabled = false;
-                checkBox1.Checked = true;
-                checkBox2.Checked = false;
-                listBox1.Enabled = false;
+                }
             }
-
-
-
-
         }
 
         private void checkBox1_Click(object sender, EventArgs e)
@@ -233,6 +237,34 @@ namespace WindowsFormsApp2
                 ListBox_toolTip.Show("Die Eingabe Liste war LEER !!", listBox1, 55, 299, 11000);
 
             }
+        }
+
+        private void Userlosche_BTN_Click(object sender, EventArgs e)
+        {
+
+            if (listBox1.SelectedIndex > NoMatches)
+            {
+                listBox1.Items.Remove(listBox1.SelectedItem);
+
+            }
+            else
+            {
+                ListBox_toolTip.ToolTipTitle = "Nicht's Gelöscht";
+                ListBox_toolTip.Show("Es wurde vorher nicht's markiert !!", listBox1, 55, 299, 11000);
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }
