@@ -135,7 +135,9 @@ namespace WindowsFormsApp2
                             }
                             else
                             {
+
                                 lineList = lineList + line + "\r\n";
+                                ListBox_toolTip.ToolTipTitle = "Diese Namen sind schon vorhanden!!";
                                 ListBox_toolTip.Show(lineList, listBox1, 55, 299, 11000);
                                 // MessageBox.Show("Name -> " + line + " <-ist schon vorhanden !!", "Ist schon Vorhanden!!" , MessageBoxButtons.OK);
                             }
@@ -168,7 +170,7 @@ namespace WindowsFormsApp2
                     using (StreamWriter sw = new StreamWriter(saveFileDialog1.FileName))
                     {
                         //listBox1.Enabled = true;
-                        if ( listBox1.Items.Count > 0)
+                        if (listBox1.Items.Count > 0)
                         {
                             listBox1.BeginUpdate();
                             foreach (string item in listBox1.Items)
@@ -178,25 +180,58 @@ namespace WindowsFormsApp2
                             label5.Text = "Dateien gespeichert unter : \r\n\r\n" + saveFileDialog1.FileName;
                             listBox1.EndUpdate();
                             listBox1.Items.Clear();
+
                         }
                         else
                         {
-                            label5.Text = "Daten von ListBox nicht gespeichert : \r\n\r\nDie ListBox war LEER !!";
-                        }
 
+                            label5.Text = "Daten von ListBox nicht gespeichert : \r\n\r\nDie ListBox war LEER !!";
+
+                        }
                     }
                 }
                 catch (Exception es)
                 {
-
                     //Was schief gegangen ist.                                       
                     MessageBox.Show("Datei konnte nicht geschrieben werden" + "\r\n\r\n" + es.Message, "Dateiinhalt unter Pfad:\r\n\r\n " + saveFileDialog1.FileName, MessageBoxButtons.OK);
+
                 }
 
             }
             else
             {
                 label5.Text = "Es wurde keine Datei gespeichert \r\n\r\nDurch Abbruch vom Benutzer !!";
+
+            }
+        }
+
+        private void UserHinzufuge_Btn_Click(object sender, EventArgs e)
+        {
+            if (txtBox1.Text != "")
+            {
+                listBox1.BeginUpdate();
+                string line = txtBox1.Text.Trim();
+                int index = listBox1.FindStringExact(line);
+                if (index == ListBox.NoMatches)
+                {
+                    listBox1.Items.Add(line);
+
+                }
+                else
+                {
+                    ListBox_toolTip.ToolTipTitle = "Dieser Namen ist schon vorhanden!!";
+                    ListBox_toolTip.Show(line, listBox1, 55, 299, 11000);
+
+                }
+                listBox1.EndUpdate();
+                txtBox1.Clear();
+
+            }
+            else
+            {
+                ListBox_toolTip.ToolTipTitle = "Nicht's hinzugefügt";
+                ListBox_toolTip.Show("Die Eingabe Liste war LEER !!", listBox1, 55, 299, 11000);
+
             }
         }
     }

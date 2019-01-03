@@ -45,7 +45,7 @@
             this.ListBox_toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.txtBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.UserHinzufuge_Btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -195,7 +195,6 @@
             // 
             this.ListBox_toolTip.AutomaticDelay = 900;
             this.ListBox_toolTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Warning;
-            this.ListBox_toolTip.ToolTipTitle = "Die Namen sind schon vorhanden!!";
             // 
             // txtBox1
             // 
@@ -214,15 +213,16 @@
             this.label6.TabIndex = 13;
             this.label6.Text = "Neue UserListe hinzufügen\r\nUser1;User2; usw.";
             // 
-            // button1
+            // UserHinzufuge_Btn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(790, 502);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 30);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "User hinzufügen";
-            this.button1.UseVisualStyleBackColor = true;
+            this.UserHinzufuge_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserHinzufuge_Btn.Location = new System.Drawing.Point(845, 502);
+            this.UserHinzufuge_Btn.Name = "UserHinzufuge_Btn";
+            this.UserHinzufuge_Btn.Size = new System.Drawing.Size(148, 30);
+            this.UserHinzufuge_Btn.TabIndex = 14;
+            this.UserHinzufuge_Btn.Text = "User hinzufügen";
+            this.UserHinzufuge_Btn.UseVisualStyleBackColor = true;
+            this.UserHinzufuge_Btn.Click += new System.EventHandler(this.UserHinzufuge_Btn_Click);
             // 
             // Form1
             // 
@@ -230,7 +230,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1360, 625);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.UserHinzufuge_Btn);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtBox1);
             this.Controls.Add(this.label5);
@@ -272,7 +272,7 @@
         private System.Windows.Forms.ToolTip ListBox_toolTip;
         private System.Windows.Forms.TextBox txtBox1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button UserHinzufuge_Btn;
     }
 }
 
