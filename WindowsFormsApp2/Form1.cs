@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net;
 using System.Windows.Forms;
 
 
@@ -8,18 +9,23 @@ namespace WindowsFormsApp2
 
     public partial class Form1 : Form
     {
+
+
+
         public Form1()
         {
+            
             InitializeComponent();
+
+           
         }
+
+
+      
+
+
 
         public const int NoMatches = -1;
-
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void ListBox_DoubleClick(object sender, EventArgs e)
         {
@@ -76,8 +82,6 @@ namespace WindowsFormsApp2
 
         private void checkBox2_Click(object sender, EventArgs e)
         {
-
-
             if (checkBox1.Enabled)
             {
 
@@ -86,32 +90,22 @@ namespace WindowsFormsApp2
             }
             else
             {
-
-
                 if (checkBox2.Checked)
                 {
                     checkBox1.Enabled = true;
                 }
                 else
                 {
-
-
                     checkBox1.Enabled = false;
                     checkBox1.Checked = true;
                 }
-
             }
         }
 
         private void ComboBox_Click(object sender, EventArgs e)
         {
-
             string text = comboBox1.SelectedItem.ToString();
-
             System.Windows.Forms.Clipboard.SetDataObject(text, true);
-
-
-
         }
 
         private void Open_Btn_Click(object sender, EventArgs e)
@@ -143,7 +137,6 @@ namespace WindowsFormsApp2
                                 lineList = lineList + line + "\r\n";
                                 ListBox_toolTip.ToolTipTitle = "Diese Namen sind schon vorhanden!!";
                                 ListBox_toolTip.Show(lineList, listBox1, 55, 299, 11000);
-                                // MessageBox.Show("Name -> " + line + " <-ist schon vorhanden !!", "Ist schon Vorhanden!!" , MessageBoxButtons.OK);
                             }
                         }
                         listBox1.EndUpdate();
@@ -254,17 +247,35 @@ namespace WindowsFormsApp2
 
             }
 
+        }
 
+        static int hh = 0;
 
+        private void IP_aktuel_Btn_Click(object sender, EventArgs e)
+        {
+            string ip = "";
+            hh++;
 
-
-
-
-
-
-
-
-
+            string url = "http://api.ipify.org";
+            try
+            {
+                HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+                using (HttpWebResponse res = (HttpWebResponse)req.GetResponse())
+                {
+                    using (StreamReader str = new StreamReader(res.GetResponseStream()))
+                    {
+                        ip = str.ReadToEnd();
+                        str.Close();
+                        label7.Text = IPAddress.Parse(ip).ToString() + " " + hh;
+                    }
+                    res.Close();
+                }
+            }
+            catch (Exception es)
+            {
+                MessageBox.Show("Eine Ausnahme erwischt!!!\n\r" + "Quelle : " + es.Source + "\n\r" + "Botschaft : " + es.Message);
+                label7.Text = es.Message;
+            }
         }
     }
 }

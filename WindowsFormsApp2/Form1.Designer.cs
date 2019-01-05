@@ -47,6 +47,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.UserHinzufuge_Btn = new System.Windows.Forms.Button();
             this.Userlosche_BTN = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.IP_aktuel_Btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox1
@@ -61,10 +63,10 @@
             "eeeeee;dfffff;dfgghhh;yy",
             "fasdfasdf;asdgasdhsdfjsdf;asdgasdghasdg;ddd",
             "gfgfg;fdfdddddd;sdsfs"});
-            this.listBox1.Location = new System.Drawing.Point(727, 91);
+            this.listBox1.Location = new System.Drawing.Point(13, 157);
             this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(620, 384);
+            this.listBox1.Size = new System.Drawing.Size(292, 204);
             this.listBox1.Sorted = true;
             this.listBox1.TabIndex = 0;
             this.listBox1.DoubleClick += new System.EventHandler(this.ListBox_DoubleClick);
@@ -74,7 +76,7 @@
             this.comboBox1.Enabled = false;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(53, 112);
+            this.comboBox1.Location = new System.Drawing.Point(13, 30);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(308, 28);
@@ -88,7 +90,7 @@
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(469, 145);
+            this.checkBox1.Location = new System.Drawing.Point(259, 66);
             this.checkBox1.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(91, 21);
@@ -100,7 +102,7 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(469, 242);
+            this.checkBox2.Location = new System.Drawing.Point(152, 104);
             this.checkBox2.Margin = new System.Windows.Forms.Padding(4);
             this.checkBox2.MaximumSize = new System.Drawing.Size(132, 122);
             this.checkBox2.Name = "checkBox2";
@@ -108,13 +110,12 @@
             this.checkBox2.TabIndex = 3;
             this.checkBox2.Text = "Entsperren";
             this.checkBox2.UseVisualStyleBackColor = true;
-            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             this.checkBox2.Click += new System.EventHandler(this.checkBox2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(465, 91);
+            this.label1.Location = new System.Drawing.Point(12, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(240, 17);
             this.label1.TabIndex = 5;
@@ -123,7 +124,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(465, 200);
+            this.label2.Location = new System.Drawing.Point(12, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 17);
             this.label2.TabIndex = 6;
@@ -132,7 +133,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(50, 91);
+            this.label3.Location = new System.Drawing.Point(12, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 17);
             this.label3.TabIndex = 7;
@@ -141,7 +142,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(899, 52);
+            this.label4.Location = new System.Drawing.Point(68, 136);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(146, 17);
             this.label4.TabIndex = 8;
@@ -155,7 +156,6 @@
             // 
             // saveFileDialog1
             // 
-            this.saveFileDialog1.CheckFileExists = true;
             this.saveFileDialog1.CreatePrompt = true;
             this.saveFileDialog1.FileName = "UserDat.UDTß";
             this.saveFileDialog1.Filter = "UserDaT  files (*.UDTß)|*.UDTß";
@@ -164,7 +164,7 @@
             // Open_Btn
             // 
             this.Open_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Open_Btn.Location = new System.Drawing.Point(66, 537);
+            this.Open_Btn.Location = new System.Drawing.Point(15, 456);
             this.Open_Btn.Name = "Open_Btn";
             this.Open_Btn.Size = new System.Drawing.Size(104, 39);
             this.Open_Btn.TabIndex = 9;
@@ -175,9 +175,9 @@
             // Save_Btn
             // 
             this.Save_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Save_Btn.Location = new System.Drawing.Point(201, 537);
+            this.Save_Btn.Location = new System.Drawing.Point(125, 456);
             this.Save_Btn.Name = "Save_Btn";
-            this.Save_Btn.Size = new System.Drawing.Size(104, 41);
+            this.Save_Btn.Size = new System.Drawing.Size(104, 39);
             this.Save_Btn.TabIndex = 10;
             this.Save_Btn.Text = "Save";
             this.Save_Btn.UseVisualStyleBackColor = true;
@@ -186,7 +186,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(58, 386);
+            this.label5.Location = new System.Drawing.Point(10, 382);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(175, 17);
             this.label5.TabIndex = 11;
@@ -199,16 +199,16 @@
             // 
             // txtBox1
             // 
-            this.txtBox1.Location = new System.Drawing.Point(338, 554);
+            this.txtBox1.Location = new System.Drawing.Point(15, 573);
             this.txtBox1.Name = "txtBox1";
-            this.txtBox1.Size = new System.Drawing.Size(800, 22);
+            this.txtBox1.Size = new System.Drawing.Size(551, 22);
             this.txtBox1.TabIndex = 12;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(334, 502);
+            this.label6.Location = new System.Drawing.Point(9, 516);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(237, 40);
             this.label6.TabIndex = 13;
@@ -217,9 +217,9 @@
             // UserHinzufuge_Btn
             // 
             this.UserHinzufuge_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserHinzufuge_Btn.Location = new System.Drawing.Point(619, 502);
+            this.UserHinzufuge_Btn.Location = new System.Drawing.Point(259, 507);
             this.UserHinzufuge_Btn.Name = "UserHinzufuge_Btn";
-            this.UserHinzufuge_Btn.Size = new System.Drawing.Size(148, 30);
+            this.UserHinzufuge_Btn.Size = new System.Drawing.Size(135, 39);
             this.UserHinzufuge_Btn.TabIndex = 14;
             this.UserHinzufuge_Btn.Text = "User hinzufügen";
             this.UserHinzufuge_Btn.UseVisualStyleBackColor = true;
@@ -228,13 +228,35 @@
             // Userlosche_BTN
             // 
             this.Userlosche_BTN.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Userlosche_BTN.Location = new System.Drawing.Point(783, 502);
+            this.Userlosche_BTN.Location = new System.Drawing.Point(400, 507);
             this.Userlosche_BTN.Name = "Userlosche_BTN";
-            this.Userlosche_BTN.Size = new System.Drawing.Size(148, 30);
+            this.Userlosche_BTN.Size = new System.Drawing.Size(135, 39);
             this.Userlosche_BTN.TabIndex = 15;
             this.Userlosche_BTN.Text = "User Löschen";
             this.Userlosche_BTN.UseVisualStyleBackColor = true;
             this.Userlosche_BTN.Click += new System.EventHandler(this.Userlosche_BTN_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(357, 64);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(164, 20);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Deine IP Anzeigen";
+            // 
+            // IP_aktuel_Btn
+            // 
+            this.IP_aktuel_Btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IP_aktuel_Btn.Location = new System.Drawing.Point(352, 9);
+            this.IP_aktuel_Btn.Name = "IP_aktuel_Btn";
+            this.IP_aktuel_Btn.Size = new System.Drawing.Size(183, 30);
+            this.IP_aktuel_Btn.TabIndex = 17;
+            this.IP_aktuel_Btn.Text = "IP Aktualisieren";
+            this.IP_aktuel_Btn.UseVisualStyleBackColor = true;
+            this.IP_aktuel_Btn.VisibleChanged += new System.EventHandler(this.IP_aktuel_Btn_Click);
+            this.IP_aktuel_Btn.Click += new System.EventHandler(this.IP_aktuel_Btn_Click);
             // 
             // Form1
             // 
@@ -242,6 +264,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1360, 625);
+            this.Controls.Add(this.IP_aktuel_Btn);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.Userlosche_BTN);
             this.Controls.Add(this.UserHinzufuge_Btn);
             this.Controls.Add(this.label6);
@@ -287,6 +311,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button UserHinzufuge_Btn;
         private System.Windows.Forms.Button Userlosche_BTN;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button IP_aktuel_Btn;
+       
     }
 }
 
