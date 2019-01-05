@@ -247,14 +247,11 @@ namespace WindowsFormsApp2
 
             }
 
-        }
-
-        static int hh = 0;
+        }       
 
         private void IP_aktuel_Btn_Click(object sender, EventArgs e)
         {
-            string ip = "";
-            hh++;
+            string ip = "";            
 
             string url = "http://api.ipify.org";
             try
@@ -266,7 +263,16 @@ namespace WindowsFormsApp2
                     {
                         ip = str.ReadToEnd();
                         str.Close();
-                        label7.Text = IPAddress.Parse(ip).ToString() + " " + hh;
+                        label7.Text = DateTime.Now.ToLocalTime().ToString("dd.MM.yy HH:mm") + " -> " + IPAddress.Parse(ip).ToString() ;
+
+                        ListViewItem listViewItem = new ListViewItem("-1");
+                        listViewItem.SubItems.Add("");
+                        listViewItem.SubItems.Add("2");
+                        
+                        listView1.Items.Add(listViewItem);
+
+
+                        
                     }
                     res.Close();
                 }

@@ -49,6 +49,10 @@
             this.Userlosche_BTN = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.IP_aktuel_Btn = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.datum_ListViv = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ip_Addresse_ListViv = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.user_Grupp_ListViv = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // listBox1
@@ -258,12 +262,41 @@
             this.IP_aktuel_Btn.VisibleChanged += new System.EventHandler(this.IP_aktuel_Btn_Click);
             this.IP_aktuel_Btn.Click += new System.EventHandler(this.IP_aktuel_Btn_Click);
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.datum_ListViv,
+            this.ip_Addresse_ListViv,
+            this.user_Grupp_ListViv});
+            this.listView1.Location = new System.Drawing.Point(348, 104);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(684, 294);
+            this.listView1.TabIndex = 18;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // datum_ListViv
+            // 
+            this.datum_ListViv.Text = "Datum";
+            this.datum_ListViv.Width = 147;
+            // 
+            // ip_Addresse_ListViv
+            // 
+            this.ip_Addresse_ListViv.Text = "IP_Addresse";
+            this.ip_Addresse_ListViv.Width = 142;
+            // 
+            // user_Grupp_ListViv
+            // 
+            this.user_Grupp_ListViv.Text = "User_Grupp";
+            this.user_Grupp_ListViv.Width = 147;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1360, 625);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.IP_aktuel_Btn);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.Userlosche_BTN);
@@ -313,7 +346,10 @@
         private System.Windows.Forms.Button Userlosche_BTN;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button IP_aktuel_Btn;
-       
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader datum_ListViv;
+        private System.Windows.Forms.ColumnHeader ip_Addresse_ListViv;
+        private System.Windows.Forms.ColumnHeader user_Grupp_ListViv;
     }
 }
 
